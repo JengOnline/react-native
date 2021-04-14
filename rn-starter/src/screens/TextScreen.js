@@ -1,7 +1,9 @@
 import React, { useReducer, useState } from "react";
 import { View, useWindowDimensions, Text, StyleSheet } from "react-native";
-import { TabView, SceneMap } from "react-native-tab-view";
+import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import { TextInput } from "react-native-gesture-handler";
+import { color } from "react-native-reanimated";
+import { render } from "react-dom";
 
 const FirstRoute = () => {
   const reducer = (state = "", action) => {
@@ -38,10 +40,8 @@ const FirstRoute = () => {
 const SecondRoute = () => {
   const [password, setPassword] = useState("");
 
-  
-
   return (
-    <View>
+    <View style={styles.view}>
       <Text style={styles.headerText}>Enter Password:</Text>
       <TextInput
         style={styles.textInput}
@@ -60,6 +60,16 @@ const SecondRoute = () => {
     </View>
   );
 };
+
+const renderTabBar = (props) => (
+  <TabBar
+    {...props}
+    indicatorStyle={{ backgroundColor: "rgb(0,144,209)", height: 5 }}
+    style={{
+      backgroundColor: "rgb(0, 81 , 112)",
+    }}
+  />
+);
 
 const TextScreen = () => {
   const layout = useWindowDimensions();
@@ -80,7 +90,9 @@ const TextScreen = () => {
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
+      renderTabBar={renderTabBar}
       initialLayout={{ width: layout.width }}
+      tabBarBackgroundColor="white"
     />
   );
 };
@@ -95,6 +107,9 @@ const styles = StyleSheet.create({
   },
   textInput: {
     fontSize: 25,
+    borderWidth:1,
+    borderRadius:2,
+   
   },
   textName: {
     marginTop: 50,
