@@ -7,7 +7,7 @@ const CreateScreen = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const btnAction = () => {
+  const saveBlogPost = () => {
     if (title === "" || content === "") {
       return;
     }
@@ -27,7 +27,7 @@ const CreateScreen = ({ navigation }) => {
         style={styles.textInput}
         onChangeText={(content) => setContent(content)}
       />
-      <Button style={styles.button} title="Save" onPress={btnAction} />
+      <Button style={styles.button} title="Save" onPress={saveBlogPost} />
     </View>
   );
 };
