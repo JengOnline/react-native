@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, Button } from "react-native";
 import { Context } from "../context/BlogContext";
 
 const CreateScreen = ({ navigation }) => {
-  const { state, addBlogPost, deleteBlogPost } = useContext(Context);
+  const { addBlogPost } = useContext(Context);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -21,11 +21,13 @@ const CreateScreen = ({ navigation }) => {
       <TextInput
         style={styles.textInput}
         onChangeText={(title) => setTitle(title)}
+        autoCapitalize="none"
       />
       <Text style={styles.text}>Enter Content: </Text>
       <TextInput
         style={styles.textInput}
         onChangeText={(content) => setContent(content)}
+        autoCapitalize="none"
       />
       <Button style={styles.button} title="Save" onPress={saveBlogPost} />
     </View>
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     borderWidth: 1,
     borderColor: "gray",
-    marginBottom:10
+    marginBottom: 10,
   },
   button: {},
 });
