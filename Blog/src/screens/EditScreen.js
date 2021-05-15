@@ -1,43 +1,21 @@
-import React, { useContext, useState } from "react";
-import { View, Text, StyleSheet, TextInput, Button } from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet } from "react-native";
 import { Context } from "../context/BlogContext";
+import BlogPostForm from "../components/BlogPostForm";
 
 const EditScreen = ({ navigation }) => {
   const { state, editBlogPost } = useContext(Context);
-  const initialize = state.find(
+  const blogPost = state.find(
     (blogPost) => blogPost.id === navigation.getParam("id")
   );
-  const [title, setTitle] = useState(initialize.title);
-  const [content, setContent] = useState(initialize.content);
-
-  const id = navigation.getParam("id");
-
-  const saveBlogPost = () => {
-    if (id === "" || title === "" || content === "") {
-      return;
-    }
-    editBlogPost(id, title, content);
-    navigation.navigate("Index");
-  };
 
   return (
-    <View style={styles.view}>
-      <Text style={styles.text}>Enter New Title: </Text>
-      <TextInput
-        style={styles.textInput}
-        onChangeText={(title) => setTitle(title)}
-        value={title}
-        autoCapitalize="none"
-      />
-      <Text style={styles.text}>Enter New Content: </Text>
-      <TextInput
-        style={styles.textInput}
-        onChangeText={(content) => setContent(content)}
-        value={content}
-        autoCapitalize="none"
-      />
-      <Button style={styles.button} title="Save" onPress={saveBlogPost} />
-    </View>
+    <BlogPostForm
+      initialValues={{ title: blogPost.title, content: blogPost.content }}
+      onSubmit={(title, content) => {
+        editBlogPost(blogPost.id, title, content, () => navigation.pop());
+      }}
+    />
   );
 };
 
