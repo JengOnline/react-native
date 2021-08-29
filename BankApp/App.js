@@ -8,6 +8,7 @@
 
 import React from 'react';
 import type {Node} from 'react';
+import RNBootSplash from 'react-native-bootsplash';
 import {
   SafeAreaView,
   ScrollView,
@@ -53,6 +54,11 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
+  React.useEffect (() => {
+    setTimeout(() => {
+      RNBootSplash.hide();
+    }, 1000);
+  })
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

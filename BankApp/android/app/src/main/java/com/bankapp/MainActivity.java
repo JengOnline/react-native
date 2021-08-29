@@ -1,6 +1,8 @@
 package com.bankapp;
 
 import com.facebook.react.ReactActivity;
+import android.os.bundle;
+import com.zoontek.rnbootsplash.RNBootSplash;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +13,11 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "BankApp";
+  }
+
+  @Override
+  protected void onCreate(Bundle saveInstanceState) {
+    super.onCreate(saveInstanceState);
+    RNBootSplash.init(R.drawable.bootsplash, MainActivity.this);
   }
 }
