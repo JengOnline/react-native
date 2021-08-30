@@ -23,7 +23,6 @@ const HomeScreen = () => {
         <View style={styles.bottom}>
           <Text style={styles.textBottom}>Design by Vladlucha</Text>
         </View>
-        
       </SafeAreaView>
     </ImageBackground>
   );

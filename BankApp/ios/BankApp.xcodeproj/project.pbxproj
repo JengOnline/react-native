@@ -15,6 +15,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		85C6FF5326DB91570009FFA5 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6FF5226DB91570009FFA5 /* BootSplash.storyboard */; };
 		CC6C8D6176CCFAB044831905 /* libPods-BankApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 466D955939FA3E9D947E6FAE /* libPods-BankApp.a */; };
+		3CFF18BEE3AB491A89A28A79 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98EE2A83D2A44AA3936BBEF0 /* SFProDisplay-Regular.ttf */; };
+		B6B046096DA9414B90261308 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABF6D7059D584B07A0B27694 /* SFProDisplay-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		BCDE03CF9E9A1A7A0441BFDC /* libPods-BankApp-BankAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BankApp-BankAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C323B76D0131C79CC2CD787B /* Pods-BankApp-BankAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankApp-BankAppTests.release.xcconfig"; path = "Target Support Files/Pods-BankApp-BankAppTests/Pods-BankApp-BankAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		98EE2A83D2A44AA3936BBEF0 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; name = "SFProDisplay-Regular.ttf"; path = "../assets/fonts/SFProDisplay-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ABF6D7059D584B07A0B27694 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; name = "SFProDisplay-Semibold.ttf"; path = "../assets/fonts/SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D31B9334FB7B946067B3CB6B /* Pods */,
+				44CD19E1D8DE4E83814DC7FB /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -150,6 +155,16 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		44CD19E1D8DE4E83814DC7FB /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				98EE2A83D2A44AA3936BBEF0 /* SFProDisplay-Regular.ttf */,
+				ABF6D7059D584B07A0B27694 /* SFProDisplay-Semibold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -248,6 +263,8 @@
 				85C6FF5326DB91570009FFA5 /* BootSplash.storyboard in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				3CFF18BEE3AB491A89A28A79 /* SFProDisplay-Regular.ttf in Resources */,
+				B6B046096DA9414B90261308 /* SFProDisplay-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

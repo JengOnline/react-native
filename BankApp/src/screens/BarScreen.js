@@ -1,16 +1,9 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  SafeAreaView,
-  Button,
-} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
 const BarScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.labelBalance}>ACTIVE BALANCE</Text>
       <View style={styles.balanceView}>
         <Text style={styles.balance}>$43.650.10</Text>
@@ -54,22 +47,24 @@ const BarScreen = () => {
           borderBottomWidth: 1,
         }}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0,
     justifyContent: 'flex-start',
   },
   labelBalance: {
+    fontFamily: 'SFProDisplay-Regular',
     fontSize: 13,
     color: '#EBEBF5',
-    marginTop:'5%'
+    marginTop: '5%',
   },
   balance: {
     fontSize: 41,
+    fontFamily: 'SFProDisplay-Regular',
     fontWeight: 'bold',
     color: '#fff',
   },
@@ -86,8 +81,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     padding: '0.3%',
-    marginTop:'10%',
-    marginBottom:'10%'
+    marginTop: '10%',
+    marginBottom: '10%',
   },
   iconStyle: {
     width: 64,
@@ -100,6 +95,7 @@ const styles = StyleSheet.create({
   textImg: {
     color: '#fff',
     fontSize: 16,
+    fontFamily: 'SFProDisplay-Regular',
   },
 });
 
