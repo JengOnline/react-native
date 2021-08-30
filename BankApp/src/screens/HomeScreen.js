@@ -1,6 +1,14 @@
 import React from 'react';
-import {View, Text, StyleSheet, ImageBackground, StatusBar, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  StatusBar,
+  SafeAreaView,
+} from 'react-native';
 import BarScreen from './BarScreen';
+import CardScreen from './CardScreen';
 
 const HomeScreen = () => {
   return (
@@ -11,9 +19,11 @@ const HomeScreen = () => {
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" />
         <BarScreen />
+        <CardScreen />
         <View style={styles.bottom}>
           <Text style={styles.textBottom}>Design by Vladlucha</Text>
         </View>
+        
       </SafeAreaView>
     </ImageBackground>
   );
