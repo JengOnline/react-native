@@ -13,7 +13,7 @@ import CardScreen from './CardScreen';
 const HomeScreen = () => {
   return (
     <ImageBackground
-      source={require('../images/BG.png')}
+      source={require('../../images/BG.png')}
       resizeMode="cover"
       style={styles.image}>
       <SafeAreaView style={styles.container}>

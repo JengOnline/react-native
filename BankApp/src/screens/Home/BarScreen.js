@@ -8,34 +8,34 @@ const BarScreen = () => {
       <View style={styles.balanceView}>
         <Text style={styles.balance}>$43.650.10</Text>
         <Image
-          source={require('../images/img-oval.png')}
+          source={require('../../images/img-oval.png')}
           style={styles.userImage}></Image>
       </View>
       <View style={styles.imgRowView}>
         <View style={styles.imgBoxView}>
           <Image
-            source={require('../icon/icon-send.png')}
+            source={require('../../icon/icon-send.png')}
             style={styles.iconStyle}
           />
           <Text style={styles.textImg}>Send</Text>
         </View>
         <View style={styles.imgBoxView}>
           <Image
-            source={require('../icon/icon-request.png')}
+            source={require('../../icon/icon-request.png')}
             style={styles.iconStyle}
           />
           <Text style={styles.textImg}>Request</Text>
         </View>
         <View style={styles.imgBoxView}>
           <Image
-            source={require('../icon/icon-in-out.png')}
+            source={require('../../icon/icon-in-out.png')}
             style={styles.iconStyle}
           />
           <Text style={styles.textImg}>In&Out</Text>
         </View>
         <View style={styles.imgBoxView}>
           <Image
-            source={require('../icon/icon-qr-code.png')}
+            source={require('../../icon/icon-qr-code.png')}
             style={styles.iconStyle}
           />
           <Text style={styles.textImg}>QR Code</Text>
