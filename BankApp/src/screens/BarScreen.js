@@ -43,7 +43,7 @@ const BarScreen = () => {
       </View>
       <View
         style={{
-          borderBottomColor: '#EBEBF5',
+          borderBottomColor: '#1d1c1d',
           borderBottomWidth: 1,
         }}
       />
