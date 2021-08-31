@@ -2,11 +2,10 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import PieChart from 'react-native-pie-chart';
 
-
 const OtherScreen = () => {
-  const widthAndHeight = 250;
-  const series = [123, 321, 123, 789, 537];
-  const sliceColor = ['#F44336', '#2196F3', '#FFEB3B', '#4CAF50', '#FF9800'];
+  const widthAndHeight = 89;
+  const series = [78, 16, 6];
+  const sliceColor = ['#5E5CE6', '#BF5AF2', '#FF9F0A'];
 
   return (
     <View style={styles.container}>
@@ -26,8 +25,8 @@ const OtherScreen = () => {
             series={series}
             sliceColor={sliceColor}
             doughnut={true}
-            coverRadius={0.45}
-            coverFill={'#FFF'}
+            coverRadius={0.6}
+            coverFill={'black'}
           />
         </View>
       </View>
@@ -59,7 +58,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     padding: '5%',
     marginTop: '3%',
-    flexDirection: 'column',
+    flexDirection: 'row',
+    justifyContent:'space-between'
   },
   expensesView: {},
   labelExpenses: {
