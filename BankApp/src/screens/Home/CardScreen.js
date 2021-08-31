@@ -5,7 +5,7 @@ function CardScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.labelView}>
-        <Text style={styles.labelCard}>Card</Text>
+        <Text style={styles.labelCard}>Cards</Text>
         <Text style={styles.labelViewAll}>View all</Text>
       </View>
       <View style={styles.cardView}>
@@ -56,9 +56,10 @@ const styles = StyleSheet.create({
     color: '#EBEBF5',
   },
   cardView: {
-    backgroundColor: '#1C1C1E',
+    backgroundColor: 'rgba(28, 28, 30, 0.5)',
     borderRadius: 25,
     padding: '5%',
+    marginTop: '3%'
   },
   firstCardInfoView: {
     flexDirection: 'row',
