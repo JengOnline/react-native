@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import BarScreen from './BarScreen';
 import CardScreen from './CardScreen';
+import OtherScreen from './OtherScreen';
 
 const HomeScreen = () => {
   return (
@@ -20,6 +21,7 @@ const HomeScreen = () => {
         <StatusBar barStyle="light-content" />
         <BarScreen />
         <CardScreen />
+        <OtherScreen />
         <View style={styles.bottom}>
           <Text style={styles.textBottom}>Design by Vladlucha</Text>
         </View>
