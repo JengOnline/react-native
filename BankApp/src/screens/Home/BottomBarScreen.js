@@ -4,6 +4,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import HomeScreen from './HomeScreen';
 import ProductScreen from '../Product/ProductScreen';
+import SupportScreen from '../Support/SupportScreen';
+import SettingScreen from '../Settings/SettingScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -35,6 +37,26 @@ function BottomBarScreen() {
               color={color}
               size={26}
             />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Support"
+        component={SupportScreen}
+        options={{
+          tabBarLabel: 'Support',
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons name="face-agent" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Settins"
+        component={SettingScreen}
+        options={{
+          tabBarLabel: 'Settings',
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons name="wrench" color={color} size={26} />
           ),
         }}
       />

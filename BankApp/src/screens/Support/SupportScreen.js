@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, ImageBackground} from 'react-native';
 
-const ProductScreen = () => {
+const SupportScreen = () => {
   return (
     <ImageBackground
       source={require('../../images/BG.png')}
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductScreen;
+export default SupportScreen;
