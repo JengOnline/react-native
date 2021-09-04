@@ -3,17 +3,32 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RNBootSplash from 'react-native-bootsplash';
 import BottomBarScreen from './src/screens/Home/BottomBarScreen';
+import CardDetailScreen from './src/screens/Cards/CardDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="BottomBar" component={BottomBarScreen} />
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="BottomBar"
+          component={BottomBarScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerBackTitle: 'Home',
+            headerTintColor: '#E42C66',
+            title: 'Cards',
+            headerTitleColor: 'white',
+            headerStyle:{
+              backgroundColor: '#000',
+            }
+          }}
+          name="CardDetail"
+          component={CardDetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
