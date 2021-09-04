@@ -1,12 +1,15 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
-
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 function CardScreen() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.labelView}>
         <Text style={styles.labelCard}>Cards</Text>
-        <Text style={styles.labelViewAll}>View all</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('CardDetail')}>
+          <Text style={styles.labelViewAll}>View all</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.cardView}>
         <View style={styles.firstCardInfoView}>
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(28, 28, 30, 0.5)',
     borderRadius: 25,
     padding: '5%',
-    marginTop: '3%'
+    marginTop: '3%',
   },
   firstCardInfoView: {
     flexDirection: 'row',
@@ -68,22 +71,22 @@ const styles = StyleSheet.create({
   secondCardInfoView: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop:'7%'
+    marginTop: '7%',
   },
   cardImage: {
     width: 28,
     height: 28,
-    marginRight:'5%'
+    marginRight: '5%',
   },
-  salaryView:{
-    flex:1,
-    justifyContent:'space-between'
+  salaryView: {
+    flex: 1,
+    justifyContent: 'space-between',
   },
   cardTitle: {
     fontSize: 17,
     color: '#fff',
     fontFamily: 'SFProDisplay-Semibold',
-    fontWeight:'bold',
+    fontWeight: 'bold',
   },
   cardSubtitle: {
     fontSize: 12,
@@ -96,5 +99,4 @@ const styles = StyleSheet.create({
     fontFamily: 'SFProDisplay-Semibold',
   },
 });
-
 export default CardScreen;
