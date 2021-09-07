@@ -21,7 +21,7 @@ export default DebitCardScreen = () => {
       padding: 20,
       flexDirection: 'column',
       justifyContent: 'space-between',
-      flex:1
+      flex:1,
     },
     debitCardTopView: {
       flexDirection: 'row',

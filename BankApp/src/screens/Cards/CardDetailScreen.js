@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, ImageBackground, SafeAreaView} from 'react-native';
 import DebitCardScreen from './DebitCardScreen';
+import ActionSheetScreen from './ActionSheetScreen';
 
 const CardDetailScreen = () => {
   return (
@@ -12,6 +13,7 @@ const CardDetailScreen = () => {
         <View style={styles.debitCardView}>
           <DebitCardScreen />
         </View>
+        <ActionSheetScreen />
       </SafeAreaView>
     </ImageBackground>
   );
@@ -25,11 +27,12 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'flex-start',
     marginTop: 20,
+    flex:1
   },
   debitCardView: {
     width: 335,
     height: 184,
-    marginLeft: '5%',
+    
   },
 });
 
