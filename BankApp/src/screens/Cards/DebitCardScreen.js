@@ -21,7 +21,7 @@ export default DebitCardScreen = () => {
       padding: 20,
       flexDirection: 'column',
       justifyContent: 'space-between',
-      flex:1,
+      flex: 1,
     },
     debitCardTopView: {
       flexDirection: 'row',
@@ -53,14 +53,14 @@ export default DebitCardScreen = () => {
     setCurrentIndex(index);
   }
   const getImageSource = index => {
-    if (index == 0) {
+    if (index %2 == 0) {
       return require('../../images/Debit-Card.png');
     } else {
       return require('../../images/Debit-Card-2.png');
     }
   };
   const carouselRef = React.useRef(null);
-  const NUMBER_OF_ITEM = 2;
+  const NUMBER_OF_ITEM = 5;
 
   renderItem = ({item, index}) => {
     return (
