@@ -100,6 +100,7 @@ export default DebitCardScreen = () => {
         itemWidth={windowWidth * 0.9}
         containerWidth={windowWidth}
         separatorWidth={0}
+        slideStyle={{borderRadius:20}}
         onScrollEnd={handleCarouselScrollEnd}
       />
       <PaginationDot

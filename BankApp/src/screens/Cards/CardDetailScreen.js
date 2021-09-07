@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   debitCardView: {
     width: 335,
     height: 184,
-    
+    marginLeft: '5%',
   },
 });
 
