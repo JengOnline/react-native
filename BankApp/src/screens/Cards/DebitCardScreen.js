@@ -11,8 +11,9 @@ import {
 } from 'react-native';
 import PaginationDot from 'react-native-animated-pagination-dot';
 
-export default DebitCardScreen = () => {
+export default DebitCardScreen = ({hideCardNumber}) => {
   const windowWidth = useWindowDimensions().width;
+  const [debitCardContent, setDebitCardContent] = useState('space-between');
   const styles = StyleSheet.create({
     carousel: {
       borderRadius: 20,
@@ -20,7 +21,7 @@ export default DebitCardScreen = () => {
     debitCardView: {
       padding: 20,
       flexDirection: 'column',
-      justifyContent: 'space-between',
+      justifyContent: debitCardContent,
       flex: 1,
     },
     debitCardTopView: {
@@ -40,6 +41,7 @@ export default DebitCardScreen = () => {
     imgMasterCard: {
       width: 45,
       height: 35.92,
+      alignSelf: 'center',
     },
     cardNumber: {
       fontFamily: 'SFProDisplay-Regular',
@@ -53,7 +55,7 @@ export default DebitCardScreen = () => {
     setCurrentIndex(index);
   }
   const getImageSource = index => {
-    if (index %2 == 0) {
+    if (index % 2 == 0) {
       return require('../../images/Debit-Card.png');
     } else {
       return require('../../images/Debit-Card-2.png');
@@ -83,7 +85,13 @@ export default DebitCardScreen = () => {
                 style={styles.imgMasterCard}
               />
             </View>
-            <Text style={styles.cardNumber}>**** **** **** 2468</Text>
+            {hideCardNumber === false ? (
+              <Text style={styles.cardNumber}>
+                **** **** **** 2468 {setDebitCardContent('space-between')}
+              </Text>
+            ) : (
+              <View>{setDebitCardContent('flex-end')}</View>
+            )}
           </View>
         </ImageBackground>
       </TouchableOpacity>
@@ -100,7 +108,7 @@ export default DebitCardScreen = () => {
         itemWidth={windowWidth * 0.9}
         containerWidth={windowWidth}
         separatorWidth={0}
-        slideStyle={{borderRadius:20}}
+        slideStyle={{borderRadius: 20}}
         onScrollEnd={handleCarouselScrollEnd}
       />
       <PaginationDot

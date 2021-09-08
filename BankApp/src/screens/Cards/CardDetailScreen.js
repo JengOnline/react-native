@@ -12,26 +12,18 @@ import ActionSheetScreen from './ActionSheetScreen';
 
 HEADER_MAX_HEIGHT = 184;
 HEADER_MIN_HEIGHT = 100;
-const HEADER_HEIGHT = 100;
 
 const CardDetailScreen = () => {
   const scrollY = new Animated.Value(0);
-  const diffClampScrollY = Animated.diffClamp(scrollY, 0, HEADER_HEIGHT);
-  const headerY = diffClampScrollY.interpolate({
-    inputRange: [0, HEADER_HEIGHT],
-    outputRange: [0, -HEADER_HEIGHT],
-  });
   const headerHeight = scrollY.interpolate({
     inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
     outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
     extrapolate: 'clamp',
   });
-  const headerZindex = scrollY.interpolate({
-    inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
-    outputRange: [0, 1],
-    extrapolate: 'clamp',
-  });
-
+  const [positionScrollY, setPositionScrollY] = useState(0);
+  const handleScroll = event => {
+    setPositionScrollY(event.nativeEvent.contentOffset.y);
+  };
   return (
     <ImageBackground
       source={require('../../images/BG.png')}
@@ -39,21 +31,22 @@ const CardDetailScreen = () => {
       style={styles.image}>
       <SafeAreaView style={styles.container}>
         <Animated.ScrollView
+          showsVerticalScrollIndicator={false}
           bounces={false}
           scrollEventThrottle={16}
           onScroll={Animated.event(
             [{nativeEvent: {contentOffset: {y: scrollY}}}],
-            {useNativeDriver: false},
+            {useNativeDriver: false, listener: event => handleScroll(event)},
           )}>
           <Animated.View
             style={{
               height: headerHeight,
-              zIndex: 1000,
               elevation: 1000,
-              transform: [{translateY: headerY}],
               left: '-7%',
             }}>
-            <DebitCardScreen />
+            <DebitCardScreen
+              hideCardNumber={positionScrollY !== 0 ? true : false}
+            />
           </Animated.View>
           <ActionSheetScreen />
         </Animated.ScrollView>

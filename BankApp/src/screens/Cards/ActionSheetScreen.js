@@ -98,7 +98,7 @@ const ActionSheetScreen = () => {
                 style={styles.iconChevronRight}
               />
             </View>
-            <View style={{height:200}}/>
+            <View style={{height:90}}/>
           </View>
         </View>
       ) : (
