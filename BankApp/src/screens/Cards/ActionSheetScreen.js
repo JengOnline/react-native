@@ -13,7 +13,6 @@ const ActionSheetScreen = () => {
   const jsonData = require('../../mockTransaction.json');
   const [mockTransaction, setMockTransaction] = useState(jsonData);
 
-  console.log(mockTransaction);
   return (
     <View style={styles.container}>
       <View style={styles.rectangleShapeView} />
