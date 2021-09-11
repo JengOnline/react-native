@@ -2,12 +2,18 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import LineChartScreen from './LineChartScreen';
 
 const ActionSheetScreen = () => {
   const [currentPage, setCurrentPage] = useState(0);
   handleIndexChange = index => {
     setCurrentPage(index);
   };
+
+  const jsonData = require('../../mockTransaction.json');
+  const [mockTransaction, setMockTransaction] = useState(jsonData);
+
+  console.log(mockTransaction);
   return (
     <View style={styles.container}>
       <View style={styles.rectangleShapeView} />
@@ -98,11 +104,38 @@ const ActionSheetScreen = () => {
                 style={styles.iconChevronRight}
               />
             </View>
-            <View style={{height:90}}/>
+            <View style={{height: 90}} />
           </View>
         </View>
       ) : (
-        <Text></Text>
+        <View style={styles.transactionView}>
+          <LineChartScreen />
+
+          {mockTransaction.map(d => (
+            <View>
+              <Text style={styles.textDay}>{d.day}</Text>
+              {d.transaction.map(data => (
+                <View style={{flexDirection: 'row', flex: 1}}>
+                  <Image
+                    style={{alignSelf: 'flex-end', marginRight: '10%'}}
+                    source={
+                      data.flag == 'up'
+                        ? require('../../icon/cell-up-icon.png')
+                        : require('../../icon/cell-down-icon.png')
+                    }
+                  />
+                  <View style={{flex: 1}}>
+                    <Text style={styles.balanceText}>{data.name}</Text>
+                    <Text style={styles.detailText}>{data.detail}</Text>
+                  </View>
+                  <Text style={styles.transactionAmountText}>
+                    {data.amount}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          ))}
+        </View>
       )}
     </View>
   );
@@ -203,6 +236,21 @@ const styles = StyleSheet.create({
   },
   iconChevronRight: {
     color: '#3A3A3C',
+  },
+  transactionView: {
+    flex: 1,
+  },
+  textDay: {
+    fontSize: 13,
+    fontFamily: 'SFProDisplay-regular',
+    color: 'rgba(235,235,245,0.6)',
+    marginTop:'5%'
+  },
+  transactionAmountText: {
+    color: '#fff',
+    fontSize: 17,
+    fontFamily: 'SFProDisplay-Regular',
+    alignSelf: 'center',
   },
 });
 

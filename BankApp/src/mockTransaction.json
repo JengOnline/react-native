@@ -1,0 +1,48 @@
+[
+  {
+    "day": "TODAY",
+    "transaction": [
+      {
+        "flag": "down",
+        "name": "Tranfer",
+        "detail": "Incoming transfer",
+        "amount":"+$3,110"
+      },
+      {
+        "flag": "up",
+        "name": "Health",
+        "detail": "Pharmacy",
+        "amount":"-$3,129"
+      }
+    ]
+  },
+  {
+    "day": "24 JUNE",
+    "transaction": [
+      {
+        "flag": "down",
+        "name": "Tranfer",
+        "detail": "Incoming transfer",
+        "amount":"+$3,110"
+      },
+      {
+        "flag": "up",
+        "name": "Health",
+        "detail": "Pharmacy",
+        "amount":"-$2,4"
+      },
+      {
+        "flag": "up",
+        "name": "Health",
+        "detail": "Pharmacy",
+        "amount":"-$12,3"
+      },
+      {
+        "flag": "up",
+        "name": "Health",
+        "detail": "Pharmacy",
+        "amount":"-$32,4"
+      }
+    ]
+  }
+]

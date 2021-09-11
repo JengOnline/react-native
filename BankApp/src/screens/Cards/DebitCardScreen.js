@@ -86,12 +86,13 @@ export default DebitCardScreen = ({hideCardNumber}) => {
               />
             </View>
             {hideCardNumber === false ? (
-              <Text style={styles.cardNumber}>
-                **** **** **** 2468 {setDebitCardContent('space-between')}
-              </Text>
+              <View>
+                {setDebitCardContent('space-between')}
+                <Text style={styles.cardNumber}>**** **** **** 2468</Text>
+              </View>
             ) : (
               <View>{setDebitCardContent('flex-end')}</View>
-            )}
+            )} 
           </View>
         </ImageBackground>
       </TouchableOpacity>
